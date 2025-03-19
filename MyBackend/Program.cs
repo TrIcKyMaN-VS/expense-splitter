@@ -68,10 +68,7 @@ app.MapPost("/api/groups", async (GroupDto groupDto, IGroupService groupService)
     return Results.Created($"/api/groups/{group.Id}", group);
 });
 
-app.MapGet("/api/groups", async (IGroupService groupService) =>
-{
-    return Results.Ok(await groupService.GetAllGroupsAsync());
-});
+app.MapGet("/api/groups", async (IGroupService groupService) => Results.Ok(await groupService.GetAllGroupsAsync()));
 
 
 
